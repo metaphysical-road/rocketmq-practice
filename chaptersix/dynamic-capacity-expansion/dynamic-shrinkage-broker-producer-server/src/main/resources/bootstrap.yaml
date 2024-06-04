@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dynamic-shrinkage-broker-producer-server
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: dynamic-shrinkage-broker-producer-server
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: dynamic-shrinkage-broker-producer-server
+        file-extension: properties
+elasticjob:
+  regCenter:
+    serverLists: 127.0.0.1:2181
+    namespace: rocketmq-practice
+  jobs:
+    dynamicJob:
+      elasticJobClass: com.rocketmq.cloud.youxia.DynamicJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+    producerMessageJob:
+      elasticJobClass: com.rocketmq.cloud.youxia.ProducerMessageJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+    producerStatusJobTest:
+      elasticJobClass: com.rocketmq.cloud.youxia.ProducerStatusJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+server:
+  port: 8889

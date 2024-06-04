@@ -1,0 +1,39 @@
+dubbo:
+  scan:
+    base-packages: com.rocketmq.cloud.youxia
+  protocol:
+    name: dubbo
+    port: 23512
+  cloud:
+    subscribed-services: distributed-generator-server
+  registry:
+    address: nacos://127.0.0.1:8848
+spring:
+  application:
+    name: good-server
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/rocketmq_practice?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456huxian
+    maximumPoolSize: 10
+    minimumIdle: 2
+    idleTimeout: 600000
+    connectionTimeout: 30000
+    maxLifetime: 1800000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: rocketmq-practice
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: good-server
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: good-server
+        file-extension: properties
+server:
+  port: 8068

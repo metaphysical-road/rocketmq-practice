@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>chapterseven</artifactId>
+        <groupId>com.rocketmq.youxia</groupId>
+        <version>${revision}</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>distributed-transaction</artifactId>
+    <groupId>com.rocketmq.youxia</groupId>
+    <name>distributed-transaction</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>good-server</module>
+        <module>order-server</module>
+        <module>pay-server</module>
+        <module>supply-server</module>
+        <module>trade-server</module>
+        <module>user-entry-api</module>
+        <module>third-channel-api</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+</project>

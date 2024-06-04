@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: command-mode-consumer-server
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: command-mode-consumer-server
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: command-mode-consumer-server
+        file-extension: properties
+      discovery:
+        group: rocketmq-practice
+        server-addr: 127.0.0.1:8848
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.0.182:9876
+        bindings:
+          input1:
+            consumer:
+              orderly: true
+      bindings:
+        input1:
+          destination: function-topic
+          content-type: application/json
+          group: function-group
+  config:
+    import: "nacos:127.0.0.1:8848"
+server:
+  port: 8026

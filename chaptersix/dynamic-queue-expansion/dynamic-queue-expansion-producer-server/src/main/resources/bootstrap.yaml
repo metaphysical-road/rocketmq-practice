@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: dynamic-queue-expansion-producer-server
+server:
+  port: 8889

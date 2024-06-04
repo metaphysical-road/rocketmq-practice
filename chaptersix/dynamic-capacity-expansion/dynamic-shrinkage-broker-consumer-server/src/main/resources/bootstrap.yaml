@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dynamic-shrinkage-broker-consumer-server
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: dynamic-shrinkage-broker-consumer-server
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: dynamic-shrinkage-broker-consumer-server
+        file-extension: properties
+elasticjob:
+  regCenter:
+    serverLists: 127.0.0.1:2181
+    namespace: rocketmq-practice
+  jobs:
+    consumerMessageJob:
+      elasticJobClass: com.rocketmq.cloud.youxia.ConsumerMessageJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+    consumerStatusJob:
+      elasticJobClass: com.rocketmq.cloud.youxia.ConsumerStatusJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+    dynamicJob:
+      elasticJobClass: com.rocketmq.cloud.youxia.DynamicJob
+      cron: 0/20 * * * * ?
+      shardingTotalCount: 1
+      overwrite: true
+server:
+  port: 8889

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: stateless-producer-server
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: stateless-producer-server
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: stateless-producer-server
+        file-extension: properties
+server:
+  port: 8012

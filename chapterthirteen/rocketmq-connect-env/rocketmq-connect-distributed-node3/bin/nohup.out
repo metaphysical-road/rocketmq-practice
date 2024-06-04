@@ -1,0 +1,8 @@
+Java HotSpot(TM) 64-Bit Server VM warning: Cannot open file /dev/shm/mq_gc_pid92196.log due to No such file or directory
+
+The standalone worker boot success.
+Java HotSpot(TM) 64-Bit Server VM warning: Cannot open file /dev/shm/mq_gc_pid93468.log due to No such file or directory
+
+RocketMQLog:WARN No appenders could be found for logger (io.netty.util.internal.PlatformDependent0).
+RocketMQLog:WARN Please initialize the logger system properly.
+The worker [192.168.0.123@192.168.0.182:9876-6ab98fca-98ce-4f55-bcc6-0452f7a4bef7] boot success.

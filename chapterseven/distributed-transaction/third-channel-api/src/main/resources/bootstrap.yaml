@@ -1,0 +1,28 @@
+dubbo:
+  scan:
+    base-packages: com.rocketmq.cloud.youxia
+  protocol:
+    name: dubbo
+    port: -1
+  cloud:
+    subscribed-services: trade-server,distributed-generator-server
+spring:
+  application:
+    name: third-channel-api
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: third-channel-api
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: third-channel-api
+        file-extension: properties
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: rocketmq-practice
+server:
+  port: 8045

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: dead-queue-producer
+  cloud:
+    nacos:
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: dead-queue-producer
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: dead-queue-producer
+        file-extension: properties
+server:
+  port: 8042

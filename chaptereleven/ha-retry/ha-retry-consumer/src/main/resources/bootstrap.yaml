@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: ha-retry-consumer
+  cloud:
+    nacos:
+      config:
+        namespace: becfha-retry-consumer336b-3ccf-4c6b-be93-e51c1542bece
+        group:
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: ha-retry-consumer
+        file-extension: properties
+server:
+  port: 8051

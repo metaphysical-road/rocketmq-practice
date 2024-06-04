@@ -1,0 +1,28 @@
+dubbo:
+  scan:
+    base-packages: com.rocketmq.cloud.youxia
+  protocol:
+    name: dubbo
+    port: 26723
+  cloud:
+    subscribed-services: distributed-uuid-server
+spring:
+  application:
+    name: strict-order-message-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: distributed-uuid-server
+      config:
+        namespace: becf336b-3ccf-4c6b-be93-e51c1542bece
+        group: strict-order-message-consumer
+        password: nacos
+        enable-remote-sync-config: true
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        name: strict-order-message-consumer
+        file-extension: properties
+server:
+  port: 8035
